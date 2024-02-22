@@ -68,7 +68,7 @@ with tab1:
                 'Monthly Salary': sum(item['Monthly Salary'] for item in newresults),
                 'Total Commission': sum(item['Total Commission'] for item in newresults),
                 'Total Expenses': sum(item['Total Expenses'] for item in newresults),
-                'Net Income': sum(item['Net Income'] for item in results)
+                'Net Income': sum(item['Net Income'] for item in newresults)
             }
             newresults.append(total_row_new)
 
