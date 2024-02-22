@@ -58,13 +58,13 @@ with tab1:
                 'Monthly Salary': sum(item['Monthly Salary'] for item in results),
                 'Total Commission': sum(item['Total Commission'] for item in results),
                 'Total Expenses': sum(item['Total Expenses'] for item in results),
-                'Net Income': sum(item['Net Income'] for item in results)
+                'Net Income': '{:,.0f}'.format(sum(item['Net Income'] for item in results))
             }
             results.append(total_row)
 
             total_row_new = {
                 'Month': 'Total',
-                'Aggregate Income': sum(item['Aggregate Income'] for item in newresults),
+                'Aggregate Income': '{:,.0f}'.format(sum(item['Aggregate Income'] for item in newresults)),
                 'Monthly Salary': sum(item['Monthly Salary'] for item in newresults),
                 'Total Commission': sum(item['Total Commission'] for item in newresults),
                 'Total Expenses': sum(item['Total Expenses'] for item in newresults),
