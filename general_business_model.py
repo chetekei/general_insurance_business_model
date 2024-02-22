@@ -73,7 +73,7 @@ with tab1:
         first_tab = pd.DataFrame(results)
         second_tab = pd.DataFrame(newresults)
 
-        st.table(first_tab)
+    
 
 with tab2:
     if not first_tab.empty:
