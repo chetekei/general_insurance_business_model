@@ -25,15 +25,15 @@ with tab1:
             newresults = []
 
             for month in range(1, months + 1):
-                aggregate_income = bd_executives * agents * monthly_sales
-                salary = bd_executives * monthly_salary
+                aggregate_income = round(bd_executives * agents * monthly_sales)
+                salary = round(bd_executives * monthly_salary)
                 commission_payable = round(aggregate_income * (commission/100))
-                total_expenses = round(salary + commission)
-                exceeded = bd_executives * (agents * (1 + (success_agents/100))) * (monthly_sales * (1 + (success_rate/100)))
+                total_expenses = round(salary + commission_payable)
+                exceeded = round(bd_executives * (agents * (1 + (success_agents/100))) * (monthly_sales * (1 + (success_rate/100))))
                 new_commission_payable = round((monthly_sales * (commission/100)) + ((exceeded - aggregate_income) * (bonus_commission/100)))
                 new_total_expenses = round(salary + new_commission_payable)
-                net_income = aggregate_income - total_expenses
-                new_net_income = exceeded - new_total_expenses
+                net_income = round(aggregate_income - total_expenses)
+                new_net_income = round(exceeded - new_total_expenses)
 
                 results.append({
                     'Month': f'Month {month}',
