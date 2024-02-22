@@ -37,19 +37,19 @@ with tab1:
 
                 results.append({
                     'Month': f'Month {month}',
-                    'Aggregate Income': '{:,.0f}'.format(aggregate_income),
-                    'Monthly Salary': '{:,.0f}'.format(salary),
-                    'Total Commission': '{:,.0f}'.format(commission_payable),
-                    'Total Expenses': '{:,.0f}'.format(total_expenses),
-                    'Net Income': '{:,.0f}'.format(net_income)})
+                    'Aggregate Income': aggregate_income,
+                    'Monthly Salary': salary,
+                    'Total Commission': commission_payable,
+                    'Total Expenses': total_expenses,
+                    'Net Income': net_income})
                 
                 newresults.append({
                     'Month': f'Month {month}',
-                    'Aggregate Income': '{:,.0f}'.format(exceeded),
-                    'Monthly Salary': '{:,.0f}'.format(salary),
-                    'Total Commission': '{:,.0f}'.format(new_commission_payable),
-                    'Total Expenses': '{:,.0f}'.format(new_total_expenses),
-                    'Net Income': '{:,.0f}'.format(new_net_income)})
+                    'Aggregate Income': exceeded,
+                    'Monthly Salary': salary,
+                    'Total Commission': new_commission_payable,
+                    'Total Expenses': new_total_expenses,
+                    'Net Income': new_net_income})
 
             # Add a row for totals
             total_row = {
