@@ -24,7 +24,7 @@ with tab1:
             results = []
             newresults = []
 
-            for month in range(0, months + 1):
+            for month in range(1, months + 1):
                 aggregate_income = bd_executives * agents * monthly_sales
                 salary = bd_executives * monthly_salary
                 commission_payable = round(aggregate_income * (commission/100))
