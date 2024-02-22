@@ -30,26 +30,26 @@ with tab1:
                 commission_payable = round(aggregate_income * (commission/100))
                 total_expenses = round(salary + commission)
                 exceeded = round(bd_executives * (agents * (1 + (success_agents/100))) * (monthly_sales * (1 + (success_rate/100))))
-                new_commission_payable = round((monthly_sales * (commission/100)) + ((exceeded - aggregate_income) * bonus_commission))
+                new_commission_payable = round((monthly_sales * (commission/100)) + ((exceeded - aggregate_income) * (bonus_commission/100)))
                 new_total_expenses = round(salary + new_commission_payable)
                 net_income = round(aggregate_income - total_expenses)
                 new_net_income = round(exceeded - new_total_expenses)
 
                 results.append({
                     'Month': f'Month {month}',
-                    'Aggregate Income': aggregate_income,
-                    'Monthly Salary': salary,
-                    'Total Commission': commission_payable,
-                    'Total Expenses': total_expenses,
-                    'Net Income': net_income})
+                    'Aggregate Income': '{:,.0f}'.format(aggregate_income),
+                    'Monthly Salary': '{:,.0f}'.format(salary),
+                    'Total Commission': '{:,.0f}'.format(commission_payable),
+                    'Total Expenses': '{:,.0f}'.format(total_expenses),
+                    'Net Income': '{:,.0f}'.format(net_income)})
                 
                 newresults.append({
                     'Month': f'Month {month}',
-                    'Aggregate Income': exceeded,
-                    'Monthly Salary': salary,
-                    'Total Commission': new_commission_payable,
-                    'Total Expenses': new_total_expenses,
-                    'Net Income': new_net_income})
+                    'Aggregate Income': '{:,.0f}'.format(exceeded),
+                    'Monthly Salary': '{:,.0f}'.format(salary),
+                    'Total Commission': '{:,.0f}'.format(new_commission_payable),
+                    'Total Expenses': '{:,.0f}'.format(new_total_expenses),
+                    'Net Income': '{:,.0f}'.format(new_net_income)})
 
             # Add a row for totals
             total_row = {
