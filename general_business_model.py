@@ -42,6 +42,7 @@ with tab1:
                 new_net_income = round(exceeded - new_total_expenses)
 
                 results.append({
+                    'Month': f'Month {month}',
                     'Aggregate Income': '{:,.0f}'.format(aggregate_income),
                     'Monthly Salary': '{:,.0f}'.format(salary),
                     'Total Commission': '{:,.0f}'.format(commission_payable),
@@ -49,6 +50,7 @@ with tab1:
                     'Net Income': '{:,.0f}'.format(net_income) })
                 
                 newresults.append({
+                    'Month': f'Month {month}',
                     'Aggregate Income': '{:,.0f}'.format(exceeded),
                     'Monthly Salary': '{:,.0f}'.format(salary),
                     'Total Commission': '{:,.0f}'.format(new_commission_payable),
