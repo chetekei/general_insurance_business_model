@@ -57,12 +57,26 @@ with tab1:
                     'Total Expenses': '{:,.0f}'.format(new_total_expenses),
                     'Net Income': '{:,.0f}'.format(new_net_income) })
 
-
-                                
-            return results, newresults
-
-
-        
+                 # Add a row for totals
+                total_row = {
+                    'Month': 'Total',
+                    'Aggregate Income': sum(item['Aggregate Income'] for item in results),
+                    'Monthly Salary': sum(item['Monthly Salary'] for item in results),
+                    'Total Commission': sum(item['Total Commission'] for item in results),
+                    'Total Expenses': sum(item['Total Expenses'] for item in results)
+                }
+                results.append(total_row)
+    
+                total_row_new = {
+                    'Month': 'Total',
+                    'Aggregate Income': sum(item['Aggregate Income'] for item in newresults),
+                    'Monthly Salary': sum(item['Monthly Salary'] for item in newresults),
+                    'Total Commission': sum(item['Total Commission'] for item in newresults),
+                    'Total Expenses': sum(item['Total Expenses'] for item in newresults)
+                }
+                newresults.append(total_row_new)
+                               
+            return results, newresults        
         
         results, newresults = calculate_cashflow(months)
 
