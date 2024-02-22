@@ -32,20 +32,24 @@ with tab1:
                 exceeded = round(bd_executives * (agents * (1 + (success_agents/100))) * (monthly_sales * (1 + (success_rate/100))))
                 new_commission_payable = round((monthly_sales * (commission/100)) + ((exceeded - aggregate_income) * bonus_commission))
                 new_total_expenses = round(salary + new_commission_payable)
+                net_income = round(aggregate_income - total_expenses)
+                new_net_income = round(exceeded - new_total_expenses)
 
                 results.append({
                     'Month': f'Month {month}',
                     'Aggregate Income': aggregate_income,
                     'Monthly Salary': salary,
                     'Total Commission': commission_payable,
-                    'Total Expenses': total_expenses})
+                    'Total Expenses': total_expenses,
+                    'Net Income': net_income})
                 
                 newresults.append({
                     'Month': f'Month {month}',
                     'Aggregate Income': exceeded,
                     'Monthly Salary': salary,
                     'Total Commission': new_commission_payable,
-                    'Total Expenses': new_total_expenses})
+                    'Total Expenses': new_total_expenses,
+                    'Net Income': new_net_income})
 
             # Add a row for totals
             total_row = {
@@ -53,7 +57,8 @@ with tab1:
                 'Aggregate Income': round(sum(item['Aggregate Income'] for item in results)),
                 'Monthly Salary': round(sum(item['Monthly Salary'] for item in results)),
                 'Total Commission': round(sum(item['Total Commission'] for item in results)),
-                'Total Expenses': round(sum(item['Total Expenses'] for item in results))
+                'Total Expenses': round(sum(item['Total Expenses'] for item in results)),
+                'Net Income': round(sum(item['Net Income'] for item in results))
             }
             results.append(total_row)
 
@@ -62,7 +67,8 @@ with tab1:
                 'Aggregate Income': round(sum(item['Aggregate Income'] for item in newresults)),
                 'Monthly Salary': round(sum(item['Monthly Salary'] for item in newresults)),
                 'Total Commission': round(sum(item['Total Commission'] for item in newresults)),
-                'Total Expenses': round(sum(item['Total Expenses'] for item in newresults))
+                'Total Expenses': round(sum(item['Total Expenses'] for item in newresults)),
+                'Net Income': round(sum(item['Net Income'] for item in results))
             }
             newresults.append(total_row_new)
 
