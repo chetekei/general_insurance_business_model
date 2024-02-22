@@ -54,21 +54,21 @@ with tab1:
             # Add a row for totals
             total_row = {
                 'Month': 'Total',
-                'Aggregate Income': round(sum(item['Aggregate Income'] for item in results)),
-                'Monthly Salary': round(sum(item['Monthly Salary'] for item in results)),
-                'Total Commission': round(sum(item['Total Commission'] for item in results)),
-                'Total Expenses': round(sum(item['Total Expenses'] for item in results)),
-                'Net Income': round(sum(item['Net Income'] for item in results))
+                'Aggregate Income': sum(item['Aggregate Income'] for item in results),
+                'Monthly Salary': sum(item['Monthly Salary'] for item in results),
+                'Total Commission': sum(item['Total Commission'] for item in results),
+                'Total Expenses': sum(item['Total Expenses'] for item in results),
+                'Net Income': sum(item['Net Income'] for item in results)
             }
             results.append(total_row)
 
             total_row_new = {
                 'Month': 'Total',
-                'Aggregate Income': round(sum(item['Aggregate Income'] for item in newresults)),
-                'Monthly Salary': round(sum(item['Monthly Salary'] for item in newresults)),
-                'Total Commission': round(sum(item['Total Commission'] for item in newresults)),
-                'Total Expenses': round(sum(item['Total Expenses'] for item in newresults)),
-                'Net Income': round(sum(item['Net Income'] for item in results))
+                'Aggregate Income': sum(item['Aggregate Income'] for item in newresults),
+                'Monthly Salary': sum(item['Monthly Salary'] for item in newresults),
+                'Total Commission': sum(item['Total Commission'] for item in newresults),
+                'Total Expenses': sum(item['Total Expenses'] for item in newresults),
+                'Net Income': sum(item['Net Income'] for item in results)
             }
             newresults.append(total_row_new)
 
